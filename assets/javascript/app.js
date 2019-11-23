@@ -23,3 +23,48 @@ function displayMovieData() {
 }
 
 displayMovieData();
+
+var movieSearchInput = $('#inputMovie').val()
+
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var playerInfoList = [{id:'player',height:'390',width:'640',videoId:'M7lc1UVf-VE'},{id:'player1',height:'390',width:'640',videoId:'M7lc1UVf-VE'}];
+
+  function onYouTubeIframeAPIReady() {
+    if(typeof playerInfoList === 'undefined')
+       return; 
+
+    for(var i = 0; i < playerInfoList.length;i++) {
+      var curplayer = createPlayer(playerInfoList[i]);
+    }   
+  }
+  function createPlayer(playerInfo) {
+      return new YT.Player(playerInfo.id, {
+         height: playerInfo.height,
+         width: playerInfo.width,
+         videoId: playerInfo.videoId
+      });
+  }
+
+
+  //person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+  
+      var queryURL = "https://www.googleapis.com/youtube/v3/search&max-results=150" ;
+      
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        .then(function(response) {
+          console.log(response)
+        })
+  
+
+
