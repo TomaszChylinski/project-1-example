@@ -3,6 +3,7 @@
 //person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 var searchTerm = "catch me if you can"
 var firstVideoVideoId = '';
+var id = "KAeAqaA0Llg";
 
 
 let queryURL = "https://www.googleapis.com/youtube/v3/search";
@@ -16,7 +17,7 @@ $.ajax({
   method: 'GET'
 }).done(function (response) {
 
-  var videoArrary = response.items;
+
   firstVideoVideoId = response.items[0].id.videoId;
   console.log('my youtube video response ', response);
 
@@ -33,7 +34,7 @@ $.ajax({
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  var playerInfoList = [{ id: 'player', height: '390', width: '640', videoId: firstVideoVideoId },];
+  var playerInfoList = [{ id: 'player', height: '390', width: '640', videoId: id },];
 
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
