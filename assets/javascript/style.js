@@ -7,8 +7,10 @@
 // });
 // work in progress - needs some refactoring and will drop JQuery i promise :)
 $(document).ready(() => {
-	$("#slideshow .slick").slick({
+	$(".slick").slick({
 		infinite: true,
+		arrows: true,
+		dots: true,
 		slidesToShow: 3,
 		slidesToScroll: 1
 	});
