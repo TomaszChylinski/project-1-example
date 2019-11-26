@@ -12,11 +12,95 @@
 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 			crossorigin="anonymous"
 		/>
+		<!-- Slick  -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+		/>
+
+		<!-- App Css  -->
+		<link rel="stylesheet" href="assets/css/style.css" />
 	</head>
+
 	<body>
 		<nav class="nav bg-dark justify-content-center">
 			<a href="index.html" class="nav-link" id="homeLink">FilmBase</a>
 		</nav>
+
+		<div class="container row justify-content-center">
+			<div class="col-9">
+				<div class="recommended">
+					<section id="slideshow">
+						<h2>Our Menu</h2>
+						<div class="slick">
+							<div>
+								<img
+									src="https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+									alt="food"
+								/>
+							</div>
+							<div>
+								<img
+									src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+									alt="moarfood"
+								/>
+							</div>
+							<div>
+								<img
+									src="https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+									alt="party"
+								/>
+							</div>
+							<div>
+								<img
+									src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+									alt=""
+									srcset=""
+								/>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="main-area">
+					<ul class="nav nav-tabs">
+						<li class="nav-tab">
+							<a data-toggle="tab" href="#home">Home</a>
+						</li>
+						<li class="nav-tab">
+							<a data-toggle="tab" href="#menu1">Menu 1</a>
+						</li>
+						<li class="nav-tab">
+							<a data-toggle="tab" href="#menu2">Menu 2</a>
+						</li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="home" class="tab-pane fade in actittve">
+							<h3>INFO</h3>
+							<p>
+								This is where you'll find info on any movie you search for via
+								the OMDB database.
+							</p>
+						</div>
+						<div id="menu1" class="tab-pane fade">
+							<h3>VIDEO</h3>
+							<p>
+								Here' we'll show YouTube clips for your chosen movie.
+							</p>
+						</div>
+						<div id="menu2" class="tab-pane fade">
+							<h3>SHOP</h3>
+							<p>
+								In this panel, we'll show shopping options for your favorite
+								title.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Scripts  -->
 		<!--   -->
 		<!--   -->
@@ -35,5 +119,11 @@
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"
 		></script>
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+		></script>
+		<script src="assets/javascript/app.js"></script>
+		<script src="assets/javascript/style.js"></script>
 	</body>
 </html>
