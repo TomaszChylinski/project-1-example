@@ -2,11 +2,12 @@
 	margin-top: 70px;
 }
 
-.tab {
+.nav-tab {
 	overflow: hidden;
-	border: 1px solid #ccc;
-	background-color: #f1f1f1;
+	/* border: 1px solid #ccc; */
+	/* background-color: #f1f1f1; */
 	position: relative;
+	margin-right: 20px;
 }
 
 .tab button {
@@ -19,19 +20,20 @@
 	transition: 0.3s;
 }
 
-.tab button:hover {
+.nav-tab:hover {
 	background-color: #ddd;
 }
 
-.tab button.active {
-	background-color: red;
+.nav-tab .active {
+	background-color: #ddd;
 }
 
-.tabcontent {
-	display: none;
+.tab-content {
+	/* display: none; */
 	padding: 6px 12px;
-	border: 1px solid #ccc;
+	/* border: 1px solid #ccc; */
 	border-top: none;
+	background-color: #ddd;
 }
 
 #slideshow div {
@@ -45,6 +47,6 @@
 }
 
 .slick-item {
-	border: solid white 5px;
+	/* border: solid white 5px; */
 	padding: 0 20px;
 }
