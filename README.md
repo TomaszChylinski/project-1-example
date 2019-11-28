@@ -1,2 +1,1 @@
-# project-1-example
-practice
+FilmBase is an application that allows users to search for movies. Upon a succesful search a user will be able to get data and a preview of their desired movie. 
