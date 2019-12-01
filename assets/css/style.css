@@ -1,3 +1,7 @@
+body{
+	color: white;
+}
+
 .main-area {
 	margin-top: 70px;
 }
@@ -49,4 +53,10 @@
 .slick-item {
 	/* border: solid white 5px; */
 	padding: 0 20px;
+}
+
+.main-area .tab-content{
+	background: lightgray;
+	color: black;
+
 }

@@ -19,7 +19,7 @@
 
 <body>
 	<nav class="nav bg-dark justify-content-center">
-		<a href="index.html" class="nav-link" id="homeLink">FilmBase</a>
+		<h1 href="index.html" class="nav-link" id="homeLink">FilmBase</h1>
 	</nav>
 
 	<div class="container-fluid row justify-content-center bg-dark">
@@ -29,34 +29,48 @@
 					<h2>Our Menu</h2>
 					<div class="slick">
 						<div class="slick-item">
-							<img src="https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							<img id="firstMovie" src="assets/images/300.jpg"
 								alt="food" />
 						</div>
 						<div class="slick-item">
-							<img src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							<img src="assets/images/titanic.jpg"
 								alt="moarfood" />
 						</div>
 						<div class="slick-item">
-							<img src="https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							<img src="assets/images/santaClaus.jpg"
 								alt="party" />
 						</div>
 						<div class="slick-item">
-							<img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							<img src="assets/images/jumanji.jpg"
 								alt="" srcset="" />
 						</div>
 					</div>
+
+					
 				</section>
 			</div>
+
+			<form>
+				<div class="form-group">
+				  <label for="movieSearch">Movie Search</label>
+				  <input type="text" class="form-control" id="movieSearch"  placeholder="ex. Catch Me If You Can">
+				  <small id="movieHelp" class="form-text text-muted">We'll never share your movie search history.</small>
+				</div>
+	
+				<button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+			  </form>
+
+
 			<div class="main-area">
 				<ul class="nav nav-tabs">
 					<li class="nav-tab">
-						<a data-toggle="tab" href="#home">Movie Detail</a>
+						<h6 data-toggle="tab" href="#home">Movie Detail</h6>
 					</li>
 					<li class="nav-tab">
-						<a data-toggle="tab" href="#menu1">Preview</a>
+						<h6 data-toggle="tab" href="#menu1">Preview</h6>
 					</li>
 					<li class="nav-tab">
-						<a data-toggle="tab" href="#menu2">Menu 2</a>
+						<h6 data-toggle="tab" href="#menu2">Menu 2</h6>
 					</li>
 				</ul>
 
