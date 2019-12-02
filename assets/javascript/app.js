@@ -1,10 +1,11 @@
 // Start of OMDB API Call
 
-$("#firstMovie").on("click", function(){
+$("img.navImage").on("click", function(){
+  event.preventDefault();
 
 
-
-var movie = $("#movieSearch").val().trim();
+var movie = $(this).attr('id')
+console.log('helo ' + movie)
 var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
 
 //ajax call  to GET API
@@ -14,14 +15,14 @@ $.ajax({
   method: "GET"
 }).then(function (movieResponse) {
   //set variables that will populate page with movie data
-
-  console.log(movieResponse);
+  
   var movieTitle = movieResponse.Title;
   var moviePlot = movieResponse.Plot;
   var movieActors = movieResponse.Actors;
   var movieGenre = movieResponse.Genre;
   var ageRated = movieResponse.Rated;
   var prodYear = movieResponse.Year;
+
 
   //display movie data
   $(".movieTitle").text(movieTitle);
@@ -67,7 +68,6 @@ $.ajax({
 
 $("#submitBtn").on("click", function () {
   event.preventDefault();
-  console.log('Hello world')
 
     var movie = $("#movieSearch").val().trim();
     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
@@ -80,7 +80,6 @@ $("#submitBtn").on("click", function () {
     }).then(function (movieResponse) {
       //set variables that will populate page with movie data
 
-      console.log(movieResponse);
       var movieTitle = movieResponse.Title;
       var moviePlot = movieResponse.Plot;
       var movieActors = movieResponse.Actors;

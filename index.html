@@ -29,36 +29,34 @@
 					<h2>Our Menu</h2>
 					<div class="slick">
 						<div class="slick-item">
-							<img id="firstMovie" src="assets/images/300.jpg"
-								alt="food" />
+							<img class="navImage" id="300" src="assets/images/300.jpg" alt="300" />
 						</div>
 						<div class="slick-item">
-							<img src="assets/images/titanic.jpg"
-								alt="moarfood" />
+							<img class="navImage" id="titanic" src="assets/images/titanic.jpg" alt="titanic" />
 						</div>
 						<div class="slick-item">
-							<img src="assets/images/santaClaus.jpg"
-								alt="party" />
+							<img class="navImage" id="santa clause 2" src="assets/images/santaClaus.jpg"
+								alt="santaclause2" />
 						</div>
 						<div class="slick-item">
-							<img src="assets/images/jumanji.jpg"
-								alt="" srcset="" />
+							<img class="navImage" id="jumanji" src="assets/images/jumanji.jpg" alt="jumanji" />
 						</div>
 					</div>
 
-					
+
 				</section>
 			</div>
 
 			<form>
 				<div class="form-group">
-				  <label for="movieSearch">Movie Search</label>
-				  <input type="text" class="form-control" id="movieSearch"  placeholder="ex. Catch Me If You Can">
-				  <small id="movieHelp" class="form-text text-muted">We'll never share your movie search history.</small>
+					<label for="movieSearch">Movie Search</label>
+					<input type="text" class="form-control" id="movieSearch" placeholder="ex. Catch Me If You Can">
+					<small id="movieHelp" class="form-text text-muted">We'll never share your movie search
+						history.</small>
 				</div>
-	
+
 				<button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
-			  </form>
+			</form>
 
 
 			<div class="main-area">
@@ -70,7 +68,7 @@
 						<h6 data-toggle="tab" href="#menu1">Preview</h6>
 					</li>
 					<li class="nav-tab">
-						<h6 data-toggle="tab" href="#menu2">Menu 2</h6>
+						<h6 data-toggle="tab" href="#menu2">Shop</h6>
 					</li>
 				</ul>
 
@@ -82,9 +80,9 @@
 						<h5>Summary: <span class="moviePlot"></span></h5>
 						<h5>Movie Genre <span class="movieGenre"></span></h5>
 						<h5>Cast Members: <span class="movieActors"></span></h5>
-						
+
 						<h5>Movie Rating: <span class="ageRated"></span></h5>
-						
+
 
 
 						</p>
@@ -92,8 +90,8 @@
 					<div id="menu1" class="tab-pane fade">
 						<h3>VIDEO</h3>
 						<p id="player"></p>
-					
-				
+
+
 					</div>
 					<div id="menu2" class="tab-pane fade">
 						<h3>SHOP</h3>
@@ -108,8 +106,13 @@
 	</div>
 
 	<!-- Scripts  -->
-	<!--   -->
-	<!--   -->
+	<!-- import firebase -->
+	<script src="assets/javascript/firebase-logic.js"></script>
+  <!-- Firebase Core JavaScript Link -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <!-- Specific Firebase products we want (Database) -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- this script doesnt need to be added <script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
