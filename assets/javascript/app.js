@@ -6,7 +6,7 @@ $("img.navImage").on("click", function(){
 
 var movie = $(this).attr('id')
 console.log('helo ' + movie)
-var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=330307b2";
 
 //ajax call  to GET API
 
@@ -51,20 +51,11 @@ $.ajax({
 });
 })
 
+//End of Nav click
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+//Start of submit button funtionality 
 
 $("#submitBtn").on("click", function () {
   event.preventDefault();
@@ -99,10 +90,6 @@ $("#submitBtn").on("click", function () {
       $(".ageRated").text(ageRated);
 
       $(".yearDate").text(prodYear);
-
-      //$(".imgHolder").prepend(movieImgHolder)
-
-      //var movieImgHolder =  $("<div class='movieImg'>");
 
       var imgURL = movieResponse.Poster;
       var movieImage = $("<img>").attr("src", imgURL);
