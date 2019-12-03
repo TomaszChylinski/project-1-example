@@ -59,7 +59,12 @@ $.ajax({
 
 $("#submitBtn").on("click", function () {
   event.preventDefault();
+  videoCall();
+  movieInfoAPI();
 
+}) ;
+
+  function movieInfoAPI(){
     var movie = $("#movieSearch").val().trim();
     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
 
@@ -97,20 +102,18 @@ $("#submitBtn").on("click", function () {
       //prepend image to our new div
 
       $(".imgHolder").prepend(movieImage);
-
     });
+  }
 
-})
 
 //START OF YOUTUBE API CALL
 
 //person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
-
-//person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 var searchTerm = "catch me if you can"
-var firstVideoVideoId = '';
+var firstVideoId = '';
 var id = "KAeAqaA0Llg";
+var  videoIdArrary = [];
 
 
 let queryURL = "https://www.googleapis.com/youtube/v3/search";
@@ -123,16 +126,21 @@ $.ajax({
   url: queryURL,
   method: 'GET'
 }).done(function (response) {
+  
+  firstVideoId = response.items[0].id.videoId;
+  videoIdArrary.push(firstVideoId);
+  console.log('testing my arrary ' +videoIdArrary)
 
-
-  firstVideoVideoId = response.items[0].id.videoId;
   console.log('my youtube video response ', response);
 
   console.log('my youtube video response ', response.items[0].etag);
 
-  console.log('show the id of the first video ' + firstVideoVideoId)
+  console.log('show the id of the first video ' + firstVideoId)
 
 })
+//person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+
+
 
 
 // Load the IFrame Player API code asynchronously.
@@ -141,7 +149,7 @@ tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var playerInfoList = [{ id: 'player', height: '390', width: '640', videoId: id },];
+var playerInfoList = [{ id: 'player', height: '390', width: '640', videoId:  videoIdArrary},];
 
 // Replace the 'ytplayer' element with an <iframe> and
 // YouTube player after the API code downloads.
@@ -162,4 +170,5 @@ function createPlayer(playerInfo) {
     videoId: playerInfo.videoId
   });
 }
+
 // END OF YOUTUBE CALL
