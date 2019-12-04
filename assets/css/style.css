@@ -6,6 +6,15 @@ body {
 	margin-top: 70px;
 }
 
+nav {
+	background-color: black;
+}
+
+.body {
+	width: auto;
+	margin: auto;
+}
+
 .nav-tab {
 	overflow: hidden;
 	/* border: 1px solid #ccc; */
@@ -74,4 +83,24 @@ body {
 
 .infoContent {
 	display: inline-block;
+}
+
+.imgHolder img {
+	width: 100%;
+}
+
+#movieTitle,
+#movieYear {
+	display: inline-block;
+}
+
+#movieYear {
+	position: relative;
+	top: 10px;
+	padding-left: 10px;
+}
+
+.fa-star {
+	font-size: 40px;
+	color: #e4bb23;
 }

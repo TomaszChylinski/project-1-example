@@ -5,9 +5,10 @@ $("img.navImage").on("click", function() {
 
 	var movie = $(this).attr("id");
 	console.log("helo " + movie);
-	var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=330307b2";
+	var queryURL =
+		"https://www.omdbapi.com/?t=" + movie + "&apikey=330307b2&plot=full";
 
-	// $("#home").tab("show");
+	$("#home").tab("show");
 	$("#homeBtn").click();
 	//ajax call  to GET API
 
@@ -23,19 +24,27 @@ $("img.navImage").on("click", function() {
 		var movieGenre = movieResponse.Genre;
 		var ageRated = movieResponse.Rated;
 		var prodYear = movieResponse.Year;
+		var runTime = movieResponse.Runtime;
+		var relDate = movieResponse.Released;
 
 		//display movie data
-		$(".movieTitle").text(movieTitle);
+		$("#movieTitle").text(movieTitle);
 
-		$(".moviePlot").text(moviePlot);
+		$("#moviePlot").text(moviePlot);
 
-		$(".movieGenre").text(movieGenre);
+		$("#movieGenre").text(movieGenre + " | ");
 
-		$(".movieActors").text(movieActors);
+		$("#movieActors").text(movieActors);
 
-		$(".ageRated").text(ageRated);
+		$("#ageRated").text(ageRated + " | ");
 
-		$(".yearDate").text(prodYear);
+		$("#runTime").text(runTime + " | ");
+
+		$("#yearDate").text(prodYear);
+
+		$("#movieYear").text(" (" + prodYear + ")");
+
+		$("#relDate").text(relDate);
 
 		//$(".imgHolder").prepend(movieImgHolder)
 
@@ -58,13 +67,15 @@ $("#submitBtn").on("click", function() {
 	event.preventDefault();
 	// videoCall();
 	movieInfoAPI();
+	$("#homeBtn").click();
 });
 
 function movieInfoAPI() {
 	var movie = $("#movieSearch")
 		.val()
 		.trim();
-	var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+	var queryURL =
+		"https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy&plot=full";
 
 	//ajax call  to GET API
 
@@ -80,19 +91,27 @@ function movieInfoAPI() {
 		var movieGenre = movieResponse.Genre;
 		var ageRated = movieResponse.Rated;
 		var prodYear = movieResponse.Year;
+		var runTime = movieResponse.Runtime;
+		var relDate = movieResponse.Released;
 
 		//display movie data
-		$(".movieTitle").text(movieTitle);
+		$("#movieTitle").text(movieTitle);
 
-		$(".moviePlot").text(moviePlot);
+		$("#moviePlot").text(moviePlot);
 
-		$(".movieGenre").text(movieGenre);
+		$("#movieGenre").text(movieGenre + " | ");
 
-		$(".movieActors").text(movieActors);
+		$("#movieActors").text(movieActors);
 
-		$(".ageRated").text(ageRated);
+		$("#ageRated").text(ageRated + " | ");
 
-		$(".yearDate").text(prodYear);
+		$("#runTime").text(runTime + " | ");
+
+		$("#yearDate").text(prodYear);
+
+		$("#movieYear").text(" (" + prodYear + ")");
+
+		$("#relDate").text(relDate);
 
 		var imgURL = movieResponse.Poster;
 		var movieImage = $("<img>").attr("src", imgURL);

@@ -24,16 +24,21 @@
 		/>
 		<!-- App Css  -->
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<script
+			src="https://kit.fontawesome.com/bd52e06c00.js"
+			crossorigin="anonymous"
+		></script>
+
 		<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 	</head>
 
 	<body>
-		<nav class="nav bg-dark justify-content-center">
+		<nav class="nav  justify-content-center ">
 			<h1 href="index.html" class="nav-link" id="homeLink">FilmBase</h1>
 		</nav>
 
-		<div class="container-fluid row justify-content-center bg-dark">
+		<div class="container-fluid row justify-content-center bg-dark body">
 			<div class="col-9">
 				<div class="recommended">
 					<section id="slideshow">
@@ -112,17 +117,30 @@
 							<h3>Search above to get info on your favorite movie!</h3>
 						</div>
 						<div id="home" class="tab-pane fade  ">
-							<h3>Get to know your movie better!</h3>
 							<div class="row">
 								<div class="imgHolder col-3 infoContent"></div>
 
 								<div class="col-9 infoContent">
-									<h5>Title: <span class="movieTitle"> </span></h5>
-									<h5>Summary: <span class="moviePlot"></span></h5>
-									<h5>Genre <span class="movieGenre"></span></h5>
-									<h5>Cast Members: <span class="movieActors"></span></h5>
+									<!-- <h5>
+										Title:
+									</h5> -->
+									<div class="row">
+										<h1 id="movieTitle"></h1>
+										<h3 id="movieYear"></h3>
+										<i class="fas fa-star"></i>
+									</div>
+									<div class="row">
+										<p>
+											<span id="ageRated"></span><span id="runTime"></span
+											><span id="movieGenre"></span><span id="relDate"></span>
+										</p>
+									</div>
+									<h4>Summary</h4>
+									<p id="moviePlot"></p>
+									<h4>Genre</h4>
+									<h4>Cast Members: <span id="movieActors"></span></h4>
 
-									<h5>Rating: <span class="ageRated"></span></h5>
+									<!-- <h4>Rating: <span id="ageRated"></span></h4> -->
 								</div>
 							</div>
 						</div>
@@ -141,6 +159,11 @@
 				</div>
 			</div>
 		</div>
+		<footer class="footer mt-auto py-3">
+			<div class="container">
+				<span class="text-muted">Place sticky footer content here.</span>
+			</div>
+		</footer>
 
 		<!-- Scripts  -->
 
