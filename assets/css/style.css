@@ -47,7 +47,7 @@ body{
 	height: 300px;
 }
 #slideshow div img {
-	width: 100%;
+	width: 80%;
 	height: auto;
 	border: solid white 3px;
 }
