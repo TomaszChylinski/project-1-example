@@ -1,137 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>FilmBase</title>
+		<!-- Bootstrap  -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<!-- Slick  -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+		/>
+		<!-- App Css  -->
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>FilmBase</title>
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-	<!-- Slick  -->
-	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-	<!-- App Css  -->
-	<link rel="stylesheet" href="assets/css/style.css" />
-	<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+	<body>
+		<nav class="nav bg-dark justify-content-center">
+			<h1 href="index.html" class="nav-link" id="homeLink">FilmBase</h1>
+		</nav>
 
-</head>
-
-<body>
-	<nav class="nav bg-dark justify-content-center">
-		<h1 href="index.html" class="nav-link" id="homeLink">FilmBase</h1>
-	</nav>
-
-	<div class="container-fluid row justify-content-center bg-dark">
-		<div class="col-9">
-			<div class="recommended">
-				<section id="slideshow">
-					<h2>Our Menu</h2>
-					<div class="slick">
-						<div class="slick-item">
-							<img class="navImage" id="300" src="assets/images/300.jpg" alt="300" />
+		<div class="container-fluid row justify-content-center bg-dark">
+			<div class="col-9">
+				<div class="recommended">
+					<section id="slideshow">
+						<h2>Our Menu</h2>
+						<div class="slick">
+							<div class="slick-item">
+								<img
+									class="navImage"
+									id="300"
+									src="assets/images/300.jpg"
+									alt="300"
+								/>
+							</div>
+							<div class="slick-item">
+								<img
+									class="navImage"
+									id="titanic"
+									src="assets/images/titanic.jpg"
+									alt="titanic"
+								/>
+							</div>
+							<div class="slick-item">
+								<img
+									class="navImage"
+									id="santa clause 2"
+									src="assets/images/santaClaus.jpg"
+									alt="santaclause2"
+								/>
+							</div>
+							<div class="slick-item">
+								<img
+									class="navImage"
+									id="jumanji"
+									src="assets/images/jumanji.jpg"
+									alt="jumanji"
+								/>
+							</div>
 						</div>
-						<div class="slick-item">
-							<img class="navImage" id="titanic" src="assets/images/titanic.jpg" alt="titanic" />
-						</div>
-						<div class="slick-item">
-							<img class="navImage" id="santa clause 2" src="assets/images/santaClaus.jpg"
-								alt="santaclause2" />
-						</div>
-						<div class="slick-item">
-							<img class="navImage" id="jumanji" src="assets/images/jumanji.jpg" alt="jumanji" />
-						</div>
-					</div>
-
-
-				</section>
-			</div>
-
-			<form>
-				<div class="form-group">
-					<label for="movieSearch">Movie Search</label>
-					<input type="text" class="form-control" id="movieSearch" placeholder="ex. Catch Me If You Can">
-					<small id="movieHelp" class="form-text text-muted">We'll never share your movie search
-						history.</small>
+					</section>
 				</div>
 
-				<button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
-			</form>
-
-
-			<div class="main-area">
-				<ul class="nav nav-tabs">
-					<li class="nav-tab">
-						<h6 data-toggle="tab" href="#home">Info</h6>
-					</li>
-					<li class="nav-tab">
-						<h6 data-toggle="tab" href="#menu1">Preview</h6>
-					</li>
-					<li class="nav-tab">
-						<h6 data-toggle="tab" href="#menu2">Shop</h6>
-					</li>
-				</ul>
-
-				<div class="tab-content">
-					<div id="home" class="tab-pane fade in active">
-						<h3>Get to know your movie better! </h3>
-						<h5> <span class="imgHolder"></span></h5>
-						<h5>Title: <span class="movieTitle"> </span></h5>
-						<h5>Summary: <span class="moviePlot"></span></h5>
-						<h5>Genre <span class="movieGenre"></span></h5>
-						<h5>Cast Members: <span class="movieActors"></span></h5>
-
-						<h5>Movie Rating: <span class="ageRated"></span></h5>
-
-
-
-						</p>
+				<form>
+					<div class="form-group">
+						<label for="movieSearch">Movie Search</label>
+						<input
+							type="text"
+							class="form-control"
+							id="movieSearch"
+							placeholder="ex. Catch Me If You Can"
+						/>
+						<small id="movieHelp" class="form-text text-muted"
+							>We'll never share your movie search history.</small
+						>
 					</div>
-					<div id="menu1" class="tab-pane fade">
-						<h3>VIDEO</h3>
-						<p id="player"></p>
 
+					<button id="submitBtn" type="submit" class="btn btn-primary">
+						Submit
+					</button>
+				</form>
 
-					</div>
-					<div id="menu2" class="tab-pane fade">
-						<h3>SHOP</h3>
-						<p>
-							In this panel, we'll show shopping options for your favorite
-							title.
-						</p>
+				<div class="main-area">
+					<ul class="nav nav-tabs">
+						<li class="nav-tab  active">
+							<h6 data-toggle="tab" href="#home" id="homeBtn">Info</h6>
+						</li>
+						<li class="nav-tab">
+							<h6 data-toggle="tab" href="#menu1" id="previewBtn">Preview</h6>
+						</li>
+						<li class="nav-tab">
+							<h6 data-toggle="tab" href="#menu2" id="shopBtn">Shop</h6>
+						</li>
+					</ul>
+
+					<div class="tab-content ">
+						<div id="default" class="tab-pane fade show active">
+							<h3>Search above to get info on your favorite movie!</h3>
+						</div>
+						<div id="home" class="tab-pane fade  ">
+							<h3>Get to know your movie better!</h3>
+							<div class="row">
+								<div class="imgHolder col-3 infoContent"></div>
+
+								<div class="col-9 infoContent">
+									<h5>Title: <span class="movieTitle"> </span></h5>
+									<h5>Summary: <span class="moviePlot"></span></h5>
+									<h5>Genre <span class="movieGenre"></span></h5>
+									<h5>Cast Members: <span class="movieActors"></span></h5>
+
+									<h5>Rating: <span class="ageRated"></span></h5>
+								</div>
+							</div>
+						</div>
+						<div id="menu1" class="tab-pane fade">
+							<h3>VIDEO</h3>
+							<p id="player"></p>
+						</div>
+						<div id="menu2" class="tab-pane fade">
+							<h3>SHOP</h3>
+							<p>
+								In this panel, we'll show shopping options for your favorite
+								title.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Scripts  -->
+		<!-- Scripts  -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- this script doesnt need to be added <script
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- this script doesnt need to be added <script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 			crossorigin="anonymous"
 		></script>-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-	<script src="assets/javascript/app.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+		></script>
+		<script src="assets/javascript/app.js"></script>
 
-	<!-- import firebase -->
-	<script src="assets/javascript/firebase-logic.js"></script>
-	<!--Firebase-->
+		<!-- import firebase -->
+		<script src="assets/javascript/firebase-logic.js"></script>
+		<!--Firebase-->
 
-	<script src="assets/javascript/style.js"></script>
-
-</body>
-
+		<script src="assets/javascript/style.js"></script>
+	</body>
 </html>

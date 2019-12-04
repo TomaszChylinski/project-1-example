@@ -68,3 +68,7 @@ body {
 	background: #ddd;
 	color: black;
 }
+
+.infoContent {
+	display: inline-block;
+}
