@@ -14,9 +14,11 @@ body {
 	margin-right: 20px;
 }
 
-.nav-tab h6 {
+.nav-tab a {
 	margin-bottom: 0px;
 	padding: 5px;
+	text-decoration: none;
+	color: inherit;
 }
 /* .tab button {
 	background-color: inherit;
@@ -39,6 +41,7 @@ body {
 	border-top: solid white 3px;
 	border-right: solid white 3px;
 	border-left: solid white 3px;
+	font-size: 1.5em;
 }
 
 .tab-content {
