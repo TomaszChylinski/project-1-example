@@ -11,7 +11,7 @@ $(document).ready(() => {
 		infinite: true,
 		arrows: true,
 		dots: true,
-		slidesToShow: 4,
+		slidesToShow: 3,
 		slidesToScroll: 1
 	});
 	// $("#slideshow").slick({
