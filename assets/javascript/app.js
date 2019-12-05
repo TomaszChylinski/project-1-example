@@ -26,6 +26,7 @@ $("img.navImage").on("click", function() {
 		var prodYear = movieResponse.Year;
 		var runTime = movieResponse.Runtime;
 		var relDate = movieResponse.Released;
+		var rating = movieResponse.imdbRating;
 
 		//display movie data
 		$("#movieTitle").text(movieTitle);
@@ -45,6 +46,9 @@ $("img.navImage").on("click", function() {
 		$("#movieYear").text(" (" + prodYear + ")");
 
 		$("#relDate").text(relDate);
+
+		$("#rating").text(rating);
+		$("#outOf").text("/10");
 
 		//$(".imgHolder").prepend(movieImgHolder)
 
@@ -93,6 +97,7 @@ function movieInfoAPI() {
 		var prodYear = movieResponse.Year;
 		var runTime = movieResponse.Runtime;
 		var relDate = movieResponse.Released;
+		var rating = movieResponse.imdbRating;
 
 		//display movie data
 		$("#movieTitle").text(movieTitle);
@@ -112,6 +117,9 @@ function movieInfoAPI() {
 		$("#movieYear").text(" (" + prodYear + ")");
 
 		$("#relDate").text(relDate);
+
+		$("#rating").text(rating);
+		$("#outOf").text("/10");
 
 		var imgURL = movieResponse.Poster;
 		var movieImage = $("<img>").attr("src", imgURL);

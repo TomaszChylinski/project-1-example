@@ -48,7 +48,7 @@
 								<img
 									class="navImage"
 									id="300"
-									src="assets/images/300.jpg"
+									src="assets/images/300(1).jpg"
 									alt="300"
 								/>
 							</div>
@@ -107,9 +107,9 @@
 						<li class="nav-tab">
 							<a data-toggle="tab" href="#menu1" id="previewBtn">Preview</a>
 						</li>
-						<li class="nav-tab">
+						<!-- <li class="nav-tab">
 							<a data-toggle="tab" href="#menu2" id="shopBtn">Shop</a>
-						</li>
+						</li> -->
 					</ul>
 
 					<div class="tab-content ">
@@ -127,7 +127,11 @@
 									<div class="row">
 										<h1 id="movieTitle"></h1>
 										<h3 id="movieYear"></h3>
-										<i class="fas fa-star"></i>
+										<div class="rating-stuff">
+											<i class="fas fa-star"></i>
+											<h3 id="rating"></h3>
+											<span id="outOf"></span>
+										</div>
 									</div>
 									<div class="row">
 										<p>
@@ -137,9 +141,9 @@
 									</div>
 									<h4>Summary</h4>
 									<p id="moviePlot"></p>
-									<h4>Genre</h4>
-									<h4>Cast Members: <span id="movieActors"></span></h4>
 
+									<h4>Starring</h4>
+									<p id="movieActors"></p>
 									<!-- <h4>Rating: <span id="ageRated"></span></h4> -->
 								</div>
 							</div>
@@ -148,20 +152,20 @@
 							<h3>VIDEO</h3>
 							<p id="player"></p>
 						</div>
-						<div id="menu2" class="tab-pane fade">
+						<!-- <div id="menu2" class="tab-pane fade">
 							<h3>SHOP</h3>
 							<p>
 								In this panel, we'll show shopping options for your favorite
 								title.
 							</p>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
 		</div>
 		<footer class="footer mt-auto py-3">
-			<div class="container">
-				<span class="text-muted">Place sticky footer content here.</span>
+			<div class="container justify-content-center">
+				<span class="text-muted text-center">&copy 2019</span>
 			</div>
 		</footer>
 

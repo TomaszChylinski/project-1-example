@@ -1,5 +1,11 @@
 body {
 	color: white;
+	/* height: 100%; */
+}
+
+html,
+body {
+	min-height: 100%;
 }
 
 .main-area {
@@ -11,8 +17,11 @@ nav {
 }
 
 .body {
+	position: relative;
 	width: auto;
 	margin: auto;
+	height: 100%;
+	bottom: 0;
 }
 
 .nav-tab {
@@ -103,4 +112,26 @@ nav {
 .fa-star {
 	font-size: 40px;
 	color: #e4bb23;
+}
+
+#rating {
+	position: relative;
+	/* top: 7px; */
+}
+
+.fa-star,
+#rating {
+	display: inline-block;
+}
+
+.rating-stuff {
+	margin-left: 30px;
+}
+
+#outOf {
+	font-size: 12px;
+}
+
+footer {
+	background-color: black;
 }
