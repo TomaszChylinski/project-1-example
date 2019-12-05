@@ -12,6 +12,7 @@ $("img.navImage").on("click", function() {
 	$("#homeBtn").click();
 	//ajax call  to GET API
 
+
 	$.ajax({
 		url: queryURL,
 		method: "GET"
@@ -67,6 +68,7 @@ $("img.navImage").on("click", function() {
 
 //Start of submit button funtionality
 
+
 $("#submitBtn").on("click", function() {
 	event.preventDefault();
 	// videoCall();
@@ -99,6 +101,7 @@ function movieInfoAPI() {
 		var relDate = movieResponse.Released;
 		var rating = movieResponse.imdbRating;
 
+
 		//display movie data
 		$("#movieTitle").text(movieTitle);
 
@@ -130,14 +133,15 @@ function movieInfoAPI() {
 	});
 }
 
+
 //START OF YOUTUBE API CALL
 
 //person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
-var searchTerm = "catch me if you can";
-var firstVideoId = "";
+var searchTerm = "catch me if you can"
+var firstVideoId = '';
 var id = "KAeAqaA0Llg";
-var videoIdArrary = [];
+var  videoIdArrary = [];
 
 let queryURL = "https://www.googleapis.com/youtube/v3/search";
 queryURL +=
@@ -148,20 +152,16 @@ queryURL +=
 		q: searchTerm
 	});
 $.ajax({
-	url: queryURL,
-	method: "GET"
-}).done(function(response) {
-	firstVideoId = response.items[0].id.videoId;
-	videoIdArrary.push(firstVideoId);
-	console.log("testing my arrary " + videoIdArrary);
 
-	console.log("my youtube video response ", response);
+  url: queryURL,
+  method: 'GET'
+}).done(function (response) {
 
-	console.log("my youtube video response ", response.items[0].etag);
 
-	console.log("show the id of the first video " + firstVideoId);
-});
-//person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+  firstVideoId = response.items[0].id.videoId;
+  videoIdArrary.push(firstVideoId);
+})
+
 
 // Load the IFrame Player API code asynchronously.
 var tag = document.createElement("script");
@@ -169,9 +169,8 @@ tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var playerInfoList = [
-	{ id: "player", height: "390", width: "640", videoId: videoIdArrary }
-];
+
+var playerInfoList = [{ id: 'player', height: '390', width: '640', videoId: videoIdArrary},];
 
 // Replace the 'ytplayer' element with an <iframe> and
 // YouTube player after the API code downloads.
@@ -191,5 +190,6 @@ function createPlayer(playerInfo) {
 		videoId: playerInfo.videoId
 	});
 }
+
 
 // END OF YOUTUBE CALL
